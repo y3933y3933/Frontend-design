@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+:root {
+  --dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --sec-transparent-white: hsla(0, 0%, 100%, 0.6);
+  --font-inter: "Inter", sans-serif;
+  --font-deca: "Lexend Deca", sans-serif;
+  --mobile: "375px";
+  --desktop: "1440px";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: 15px;
+  background: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-wrapper {
+  background: var(--dark-desaturated-blue);
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+}
+.card {
+  padding: 4rem;
+  width: 50%;
+}
+.card-image {
+  width: 50%;
+  background: var(--soft-violet) url("../images/image-header-desktop.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  background-blend-mode:multiply;
+}
+
+.card__title {
+  color: var(--white);
+  font-family: var(--font-inter);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.col-violet {
+  color: var(--soft-violet);
+}
+
+.card__content {
+  color: var(--transparent-white);
+  font-family: var(--font-inter);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.stat-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat__num {
+  color: var(--white);
+  font-family: var(--font-inter);
+  margin-bottom: 5px;
+}
+.stat__description {
+  color: var(--sec-transparent-white);
+  text-transform: uppercase;
+  font-family: var(--font-deca);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    padding: 20px;
+  }
+  .card-wrapper {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    order: 2;
+    padding: 2rem;
+    text-align: center;
+  }
+  .card-image {
+    width: 100%;
+    height: 250px;
+    order: 1;
+  }
+  .stat-wrapper {
+    flex-direction: column;
+  }
+  .stat:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .card-image{
+      background-image: url('../images/image-header-mobile.jpg');
+  }
+}
+
+.footer{
+  position: fixed;
+  bottom:0;
+  color:var(--white);
+  font-size: 11px; text-align: center;
+}
+
+.footer__link{
+  color: hsl(228, 45%, 44%);
+}
