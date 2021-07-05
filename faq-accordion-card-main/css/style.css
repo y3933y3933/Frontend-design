@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --grayish-blue: hsl(240, 6%, 50%);
+  --dark-grayish-blue: hsl(237, 12%, 33%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background-color: #fff;
+  display: flex;
+  border-radius: 10px;
+  min-width: 60vw;
+  min-height: 70vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.card__img {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  /* background-repeat: no-repeat;
+  background-image: url("../images/bg-pattern-desktop.svg"),url("../images/illustration-woman-online-desktop.svg");
+  background-position: 100% 60% */
+  /* background: url("../images/bg-pattern-desktop.svg") no-repeat; */
+
+  /* background: url("../images/bg-pattern-desktop.svg") center no-repeat,
+    url("../images/illustration-woman-online-desktop.svg") center no-repeat,
+    url("../images/illustration-box-desktop.svg") center no-repeat; */
+}
+
+.card__img img {
+  position: absolute;
+  right: 50px;
+}
+.card__faq {
+  width: 50%;
+  padding: 3.5rem;
+}
+.card__title {
+  color: var(--dark-blue);
+  margin-bottom: 2rem;
+}
+.card__qust-item {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.card__question {
+  color: var(--dark-grayish-blue);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  transition: all 0.5s;
+}
+.arrow-icon {
+  align-self: center;
+  transition: all 0.5s;
+}
+
+.card__answer {
+  color: var(--grayish-blue);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.active .card__question {
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+
+.active .arrow-icon {
+  transform: rotate(180deg);
+}
