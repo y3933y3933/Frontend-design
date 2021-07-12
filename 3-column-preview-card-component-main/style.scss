@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+// Variables
+$color-primary-1: hsl(31, 77%, 52%);
+$color-primary-2: hsl(184, 100%, 22%);
+$color-primary-3:hsl(179, 100%, 13%);
+
+$color-white:hsla(0, 0%, 100%, 0.75);
+$color-gray: hsl(0, 0%, 95%);
+
+$font-size:15px;
+$font-family-deca:'Lexend Deca',
+sans-serif;
+$font-family-shoulders:'Big Shoulders Display',
+cursive;
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: $font-size;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $color-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-wrapper {
+    display: flex;
+    max-width: 900px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &--orange {
+        background-color: $color-primary-1;
+    }
+
+    &--cyan {
+        background-color: $color-primary-2;
+    }
+
+    &--dark-cyan {
+        background-color: $color-primary-3;
+    }
+
+    &__title {
+        color: $color-gray;
+        font-family: $font-family-shoulders;
+        text-transform: uppercase;
+        margin: 1.5rem 0;
+    }
+
+    &__description {
+        color: $color-white;
+        font-family: $font-family-deca;
+        line-height: 1.5;
+        margin-bottom: 5rem;
+    }
+
+    &__btn {
+        margin-top: auto;
+        text-decoration: none;
+        color: inherit;
+        background-color: #fff;
+        padding: .8rem 1.6rem;
+        font-family: $font-family-deca;
+        border-radius: 30px;
+        border: 2px solid transparent;
+        transition: all .5s;
+        font-size: 12px;
+        &--orange {
+            color: $color-primary-1;
+        }
+
+        &--cyan {
+            color: $color-primary-2;
+        }
+
+        &--dark-cyan {
+            color: $color-primary-3;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: transparent;
+            border:2px solid #fff;
+        }
+    }
+
+
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    font-size: 11px;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+@media screen and (max-width:375px) {
+    body{
+        padding:6rem 2rem;
+    }
+    .card-wrapper{
+        flex-direction: column;
+    }
+
+}
