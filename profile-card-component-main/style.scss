@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+// Variables
+$primary-color-1: hsl(185, 75%, 39%);
+$primary-color-2: hsl(229, 23%, 23%);
+$primary-color-3:hsl(227, 10%, 46%);
+$secondary-color:hsl(0, 0%, 59%);
+
+$font-size: 18px;
+$font-family: "Kumbh Sans",
+sans-serif;
+
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $primary-color-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family;
+}
+
+.bg {
+    position: fixed;
+
+    &--top {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &--bottom {
+        right: 0;
+        bottom: 0;
+        transform: translateX(50%) translateY(50%);
+    }
+}
+
+.profile {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        min-width: 350px;
+        min-height: 120px;
+        background: url("../images/bg-pattern-card.svg");
+    }
+
+    &__img {
+        border-radius: 50%;
+        border: 5px solid #fff;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+    }
+
+    &__name {
+        color: $primary-color-2;
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    &__age {
+        color: $primary-color-3;
+        font-weight: 400;
+    }
+
+    &__city {
+        color: $secondary-color;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+.divider {
+    opacity: .2;
+    margin-top: 1.5rem;
+}
+
+.stat-wrapper{
+    display: flex;
+    padding: 2rem 4rem;
+    justify-content: space-between;
+}
+.stat{
+    text-align: center;
+    &__num{
+        color:$primary-color-2;
+    }
+    &__text{
+        color: $secondary-color;
+        margin-top:2px;
+    }
+}
