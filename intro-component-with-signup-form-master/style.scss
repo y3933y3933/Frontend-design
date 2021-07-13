@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+// Variables
+$color-primary-1:hsl(0, 100%, 74%);
+$color-primary-2:hsl(154, 59%, 51%);
+$color-blue:hsl(248, 32%, 49%);
+$color-dark-blue:hsl(249, 10%, 26%);
+$color-gray-blue:hsl(246, 25%, 77%);
+
+$font-size:16px;
+$font-family:'Poppins',
+sans-serif;
+
+$box-shadow-1:0px 5px 0px 0px rgba(0, 0, 0, 0.2);
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-size: $font-size;
+    font-family: $font-family;
+    background: url("../images/bg-intro-desktop.png"), $color-primary-1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.col {
+    flex: 1 1 50%;
+    padding: 0 1rem;
+}
+
+.heading-primary {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.text--gray {
+    color: hsl(245, 100%, 95%);
+    font-weight: 400;
+}
+
+.text--orange {
+    color: $color-primary-1;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 5px;
+    box-shadow: $box-shadow-1;
+    transition: all 0.2s;
+    color: #fff;
+    margin: 1rem 0;
+
+    &--violet {
+        background-color: $color-blue;
+    }
+
+    &-submit {
+        background-color: $color-primary-2;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        filter: brightness(120%);
+    }
+
+    &:active {
+        transform: translateY(1px);
+        box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.2);
+        filter: brightness(150%);
+    }
+}
+
+.form {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: $box-shadow-1;
+
+    &__input {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-indent: 20px;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $color-gray-blue;
+        }
+
+        &:invalid {
+            background: url("../images/icon-error.svg") right 1.5rem center no-repeat;
+            border: 1px solid red;
+        }
+
+        &:invalid~.error-msg {
+            visibility: visible;
+        }
+    }
+
+    &__hint {
+        font-size: 8px;
+        text-align: center;
+    }
+
+}
+
+.error-msg {
+    visibility: hidden;
+    font-size: 10px;
+    display: block;
+    text-align: right;
+    color: red;
+    margin: 5px 0 10px;
+}
+
+
+@media screen and (max-width: 375px) {
+    body {
+        padding: 4rem 0;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
