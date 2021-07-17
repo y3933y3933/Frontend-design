@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+// Variables
+$color-primary: hsl(263, 55%, 52%);
+$color-secondary:hsl(217, 19%, 35%);
+$color-tertiary:hsl(219, 29%, 14%);
+$color-white:hsl(0, 0%, 100%);
+$color-gray: hsl(0, 0%, 81%);
+$color-blue:hsl(210, 46%, 95%);
+
+$opacity-1: .5;
+$opacity-2:.7;
+
+$font-size:13px;
+$font-family: 'Barlow Semi Condensed',
+sans-serif;
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $color-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin text-color($color, $opacity) {
+    color: $color;
+    opacity: $opacity
+}
+.grid {
+    display: grid;
+    max-width: 1100px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.card {
+    border-radius: 5px;
+    padding: 1.5rem;
+
+    &-1 {
+        background-color: $color-primary;
+        grid-column: 1/span 2;
+    }
+
+    &-2 {
+        background-color: $color-secondary;
+    }
+
+    &-3 {
+        background-color: $color-white;
+        grid-column: 1/2;
+    }
+
+    &-4 {
+        background-color: $color-tertiary;
+        grid-column: 2/4;
+    }
+
+    &-5 {
+        background-color: $color-white;
+        grid-column: 4/5;
+        grid-row: 1/span 2;
+    }
+
+    &__author {
+        @include text-color($color-gray, 1);
+        font-weight: 600;
+    }
+
+    &__status {
+        @include text-color($color-gray, $opacity-1);
+    }
+
+    &__quotations {
+        @include text-color($color-gray, $opacity-2);
+    }
+}
+
+.color {
+    &-white {
+        color: $color-white;
+    }
+}
+
+.m {
+    &-y-m {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width:375px) {
+    body {
+        padding: 4rem 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-gap: 1.5rem 0;
+    }
+
+    .card {
+        grid-column: 1;
+
+        &-1 {
+
+            grid-row: 1/ span 2;
+        }
+
+        &-2 {
+
+            grid-row: 3/ 4
+        }
+
+        &-3 {
+
+            grid-row: 4/5;
+        }
+
+        &-4 {
+
+            grid-row: 5/ span 2;
+        }
+
+        &-5 {
+
+            grid-row: 7 /span 2;
+        }
+    }
+}
+

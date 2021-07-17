@@ -1,0 +1,32 @@
+.todos {
+    background-color: var(--input-background);
+    border-radius: 3px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 20px;
+
+    &__item:not(:last-child) {
+        border-bottom: 1px solid rgba(125, 125, 125, .2);
+    }
+
+    &__footer {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--dark-grayish-blue);
+
+        a {
+            cursor: pointer;
+
+        }
+    }
+
+    &:hover .input__delete {
+        visibility: visible;
+    }
+}
+
+.selected {
+    color: $primary-color;
+    font-weight: 600;
+}
